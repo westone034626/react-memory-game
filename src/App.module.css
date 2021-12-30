@@ -16,3 +16,16 @@ button:hover {
   background: #c23866;
   color: #fff;
 }
+
+.cardGrid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+  background-position: center;
+  background-size: cover;
+  height: 0;
+  padding-bottom: 100%;
+}

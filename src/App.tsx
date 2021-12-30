@@ -35,6 +35,24 @@ function App() {
     <div className={styles.App}>
       <h1>Magic Match</h1>
       <button onClick={shuffleCards}>New Game</button>
+      {cards.length === 0 ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div className={styles.cardGrid}>
+          {cards.map((card) => (
+            <div key={card.id}>
+              <div
+                className={styles.card}
+                style={{ backgroundImage: `url(${card.src})` }}
+              ></div>
+              <div
+                className={styles.card}
+                style={{ backgroundImage: 'url(../img/cover.png)' }}
+              ></div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
