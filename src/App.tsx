@@ -3,12 +3,12 @@ import styles from './App.module.css';
 import Card from './components/Card';
 
 const cardImages = [
-  { src: '../img/helmet-1.png', matched: false },
-  { src: '../img/potion-1.png', matched: false },
-  { src: '../img/ring-1.png', matched: false },
-  { src: '../img/scroll-1.png', matched: false },
-  { src: '../img/shield-1.png', matched: false },
-  { src: '../img/sword-1.png', matched: false },
+  { src: '/react-memory-game/img/helmet-1.png', matched: false },
+  { src: '/react-memory-game/img/potion-1.png', matched: false },
+  { src: '/react-memory-game/img/ring-1.png', matched: false },
+  { src: '/react-memory-game/img/scroll-1.png', matched: false },
+  { src: '/react-memory-game/img/shield-1.png', matched: false },
+  { src: '/react-memory-game/img/sword-1.png', matched: false },
 ];
 
 export interface CardProps {
