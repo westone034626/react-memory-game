@@ -18,8 +18,9 @@ export interface CardProps {
 }
 
 function App() {
+  const [isDisable, setIsDisable] = useState(false);
   const [cards, setCards] = useState<CardProps[]>([]);
-  const [turns, setTurns] = useState<number>(0);
+  const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState<CardProps | null>(null);
   const [choiceTwo, setChoiceTwo] = useState<CardProps | null>(null);
 
@@ -37,8 +38,10 @@ function App() {
 
   useEffect(() => {
     if (choiceOne && choiceTwo) {
-      if (choiceOne.src !== choiceTwo.src) console.log('not matched');
-      else {
+      setIsDisable(true);
+      if (choiceOne.src !== choiceTwo.src) {
+        setTimeout(resetTurn, 1000);
+      } else {
         setCards(
           cards.map((card) => {
             return card.src === choiceOne.src
@@ -46,12 +49,13 @@ function App() {
               : card;
           })
         );
+        resetTurn();
       }
-      resetTurn();
     }
   }, [choiceOne, choiceTwo]);
 
   const handleChoice = (card: CardProps) => {
+    if (isDisable) return;
     choiceOne === null ? setChoiceOne(card) : setChoiceTwo(card);
   };
 
@@ -59,6 +63,7 @@ function App() {
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns((prev) => prev + 1);
+    setIsDisable(false);
   };
 
   return (
