@@ -4,24 +4,32 @@ import { CardProps } from '../App';
 
 interface CardComponentProps {
   card: CardProps;
+  flipped: boolean;
   handleChoice: (arg1: CardProps) => void;
 }
 
-const Card: React.FC<CardComponentProps> = ({ card, handleChoice }) => {
+const Card: React.FC<CardComponentProps> = ({
+  card,
+  handleChoice,
+  flipped,
+}) => {
   const handleClick = () => {
     handleChoice(card);
   };
   return (
-    <div>
-      <div
-        className={styles.card}
-        style={{ backgroundImage: `url(${card.src})` }}
-      ></div>
-      <div
-        className={styles.card}
-        style={{ backgroundImage: 'url(../img/cover.png)' }}
-        onClick={handleClick}
-      ></div>
+    <div className={styles.card}>
+      {flipped ? (
+        <div
+          className={`${styles.cardImage}`}
+          style={{ backgroundImage: `url(${card.src})` }}
+        ></div>
+      ) : (
+        <div
+          className={`${styles.cardImage}`}
+          style={{ backgroundImage: 'url(../img/cover.png)' }}
+          onClick={handleClick}
+        ></div>
+      )}
     </div>
   );
 };

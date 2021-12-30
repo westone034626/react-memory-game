@@ -3,17 +3,18 @@ import styles from './App.module.css';
 import Card from './components/Card';
 
 const cardImages = [
-  { src: '../img/helmet-1.png' },
-  { src: '../img/potion-1.png' },
-  { src: '../img/ring-1.png' },
-  { src: '../img/scroll-1.png' },
-  { src: '../img/shield-1.png' },
-  { src: '../img/sword-1.png' },
+  { src: '../img/helmet-1.png', matched: false },
+  { src: '../img/potion-1.png', matched: false },
+  { src: '../img/ring-1.png', matched: false },
+  { src: '../img/scroll-1.png', matched: false },
+  { src: '../img/shield-1.png', matched: false },
+  { src: '../img/sword-1.png', matched: false },
 ];
 
 export interface CardProps {
   src: string;
   id: number;
+  matched: boolean;
 }
 
 function App() {
@@ -36,8 +37,16 @@ function App() {
 
   useEffect(() => {
     if (choiceOne && choiceTwo) {
-      if (choiceOne.src === choiceTwo.src) console.log('matched');
-      else console.log('not matched');
+      if (choiceOne.src !== choiceTwo.src) console.log('not matched');
+      else {
+        setCards(
+          cards.map((card) => {
+            return card.src === choiceOne.src
+              ? { ...card, matched: true }
+              : card;
+          })
+        );
+      }
       resetTurn();
     }
   }, [choiceOne, choiceTwo]);
@@ -51,6 +60,7 @@ function App() {
     setChoiceTwo(null);
     setTurns((prev) => prev + 1);
   };
+
   return (
     <div className={styles.App}>
       <h1>Magic Match</h1>
@@ -60,7 +70,16 @@ function App() {
       ) : (
         <div className={styles.cardGrid}>
           {cards.map((card) => (
-            <Card key={card.id} card={card} handleChoice={handleChoice} />
+            <Card
+              key={card.id}
+              card={card}
+              handleChoice={handleChoice}
+              flipped={
+                (choiceOne ? choiceOne.id === card.id : false) ||
+                (choiceTwo ? choiceTwo.id === card.id : false) ||
+                card.matched
+              }
+            />
           ))}
         </div>
       )}
