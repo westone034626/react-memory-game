@@ -19,19 +19,38 @@ export interface CardProps {
 function App() {
   const [cards, setCards] = useState<CardProps[]>([]);
   const [turns, setTurns] = useState<number>(0);
+  const [choiceOne, setChoiceOne] = useState<CardProps | null>(null);
+  const [choiceTwo, setChoiceTwo] = useState<CardProps | null>(null);
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
       .map((card, index) => ({ ...card, id: index }));
     setCards(shuffledCards);
-    setTurns((prev) => prev + 1);
+    setTurns(0);
   };
 
   useEffect(() => {
     shuffleCards();
   }, []);
 
+  useEffect(() => {
+    if (choiceOne && choiceTwo) {
+      if (choiceOne.src === choiceTwo.src) console.log('matched');
+      else console.log('not matched');
+      resetTurn();
+    }
+  }, [choiceOne, choiceTwo]);
+
+  const handleChoice = (card: CardProps) => {
+    choiceOne === null ? setChoiceOne(card) : setChoiceTwo(card);
+  };
+
+  const resetTurn = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns((prev) => prev + 1);
+  };
   return (
     <div className={styles.App}>
       <h1>Magic Match</h1>
