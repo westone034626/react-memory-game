@@ -60,7 +60,7 @@ function App() {
       ) : (
         <div className={styles.cardGrid}>
           {cards.map((card) => (
-            <Card key={card.id} {...card} />
+            <Card key={card.id} card={card} handleChoice={handleChoice} />
           ))}
         </div>
       )}
