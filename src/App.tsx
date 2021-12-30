@@ -30,6 +30,8 @@ function App() {
       .map((card, index) => ({ ...card, id: index }));
     setCards(shuffledCards);
     setTurns(0);
+    setChoiceOne(null);
+    setChoiceTwo(null);
   };
 
   useEffect(() => {
