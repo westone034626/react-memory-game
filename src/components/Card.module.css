@@ -1,0 +1,6 @@
+.card {
+  background-position: center;
+  background-size: cover;
+  height: 0;
+  padding-bottom: 100%;
+}

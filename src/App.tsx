@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './App.module.css';
+import Card from './components/Card';
 
 const cardImages = [
   { src: '../img/helmet-1.png' },
@@ -10,7 +11,7 @@ const cardImages = [
   { src: '../img/sword-1.png' },
 ];
 
-interface CardProps {
+export interface CardProps {
   src: string;
   id: number;
 }
@@ -40,16 +41,7 @@ function App() {
       ) : (
         <div className={styles.cardGrid}>
           {cards.map((card) => (
-            <div key={card.id}>
-              <div
-                className={styles.card}
-                style={{ backgroundImage: `url(${card.src})` }}
-              ></div>
-              <div
-                className={styles.card}
-                style={{ backgroundImage: 'url(../img/cover.png)' }}
-              ></div>
-            </div>
+            <Card key={card.id} {...card} />
           ))}
         </div>
       )}

@@ -22,10 +22,3 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-
-.card {
-  background-position: center;
-  background-size: cover;
-  height: 0;
-  padding-bottom: 100%;
-}
