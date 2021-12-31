@@ -60,14 +60,18 @@ function App() {
 
   useEffect(() => {
     if (cards.length && cards.every((card) => card.matched)) {
-      // cards가 전부 앞면이 되었을 때 호출되는 effect 함수
-      console.log('done');
+      setIsDone(true);
     }
   }, [cards]);
 
   const handleChoice = (card: CardProps) => {
     if (isDisable) return;
     choiceOne === null ? setChoiceOne(card) : setChoiceTwo(card);
+  };
+
+  const handleModalButton = () => {
+    setIsDone(false);
+    shuffleCards();
   };
 
   const resetTurn = () => {
@@ -100,7 +104,7 @@ function App() {
         </div>
       )}
       <p>Turns: {turns}</p>
-      {isDone && <Modal turns={turns} />}
+      {isDone && <Modal turns={turns} handleButton={handleModalButton} />}
     </div>
   );
 }
