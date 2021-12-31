@@ -109,7 +109,7 @@ function App() {
         </div>
       )}
       <p>Turns: {turns}</p>
-      {isDone && <Modal turns={turns} handleButton={handleModalButton} />}
+      <Modal isOpen={isDone} turns={turns} handleButton={handleModalButton} />
     </div>
   );
 }
