@@ -23,6 +23,7 @@ function App() {
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState<CardProps | null>(null);
   const [choiceTwo, setChoiceTwo] = useState<CardProps | null>(null);
+  const [isDone, setIsDone] = useState(true);
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -98,6 +99,37 @@ function App() {
         </div>
       )}
       <p>Turns: {turns}</p>
+      {isDone && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'rgba(0,0,0,.6)',
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: 'rgba(0,0,0,.95)',
+              width: '100%',
+              maxWidth: '370px',
+              border: '3px solid rgba(255,255,255, 1)',
+              borderRadius: '25px',
+              boxSizing: 'border-box',
+            }}
+          >
+            <h1>클리어</h1>
+            <p>Turns: {turns}</p>
+            <button style={{ marginBottom: '20px' }}>재도전</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
