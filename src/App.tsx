@@ -79,7 +79,7 @@ function App() {
   return (
     <div className={styles.App}>
       <h1>Magic Match</h1>
-      <button onClick={shuffleCards}>New Game</button>
+      <button onClick={shuffleCards}>다시 하기</button>
       {cards.length === 0 ? (
         <h1>Loading...</h1>
       ) : (
