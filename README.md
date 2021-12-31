@@ -8,6 +8,12 @@
 
   1.  모달창 발생 시 스크롤 되지 않도록 조치(wanted의 로그인/회원가입 모달창 참고)
 
+  - querySelector로 body 태그에 접근해서 style의 overflow 조작
+
+- Javascript 문법
+
+  1.  카드 오브젝트들의 matched property가 모두 true인지 검사할 때 every를 활용
+
 - 얻을 수 있었던 것
 
   1.  원하는 로직대로 구현하기 위해 react hook을 활용한 경험(useState, useEffect)
