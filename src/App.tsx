@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './App.module.css';
 import Card from './components/Card';
+import Modal from './components/Modal';
 
 const cardImages = [
   { src: `${process.env.PUBLIC_URL}/img/helmet-1.png`, matched: false },
@@ -99,37 +100,7 @@ function App() {
         </div>
       )}
       <p>Turns: {turns}</p>
-      {isDone && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'rgba(0,0,0,.6)',
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: 'rgba(0,0,0,.95)',
-              width: '100%',
-              maxWidth: '370px',
-              border: '3px solid rgba(255,255,255, 1)',
-              borderRadius: '25px',
-              boxSizing: 'border-box',
-            }}
-          >
-            <h1>클리어</h1>
-            <p>Turns: {turns}</p>
-            <button style={{ marginBottom: '20px' }}>재도전</button>
-          </div>
-        </div>
-      )}
+      {isDone && <Modal turns={turns} />}
     </div>
   );
 }
