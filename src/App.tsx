@@ -24,7 +24,7 @@ function App() {
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState<CardProps | null>(null);
   const [choiceTwo, setChoiceTwo] = useState<CardProps | null>(null);
-  const [isDone, setIsDone] = useState(true);
+  const [isDone, setIsDone] = useState(false);
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -63,6 +63,11 @@ function App() {
       setIsDone(true);
     }
   }, [cards]);
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    if (body) body.style.overflow = isDone ? 'hidden' : 'auto';
+  }, [isDone]);
 
   const handleChoice = (card: CardProps) => {
     if (isDisable) return;
