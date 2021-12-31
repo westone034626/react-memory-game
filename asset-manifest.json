@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/react-memory-game/static/css/main.3b488a38.chunk.css",
-    "main.js": "/react-memory-game/static/js/main.0593027f.chunk.js",
-    "main.js.map": "/react-memory-game/static/js/main.0593027f.chunk.js.map",
+    "main.css": "/react-memory-game/static/css/main.f39d37af.chunk.css",
+    "main.js": "/react-memory-game/static/js/main.27eed861.chunk.js",
+    "main.js.map": "/react-memory-game/static/js/main.27eed861.chunk.js.map",
     "runtime-main.js": "/react-memory-game/static/js/runtime-main.62a91fb4.js",
     "runtime-main.js.map": "/react-memory-game/static/js/runtime-main.62a91fb4.js.map",
-    "static/js/2.0706c444.chunk.js": "/react-memory-game/static/js/2.0706c444.chunk.js",
-    "static/js/2.0706c444.chunk.js.map": "/react-memory-game/static/js/2.0706c444.chunk.js.map",
+    "static/js/2.5d94b59c.chunk.js": "/react-memory-game/static/js/2.5d94b59c.chunk.js",
+    "static/js/2.5d94b59c.chunk.js.map": "/react-memory-game/static/js/2.5d94b59c.chunk.js.map",
     "index.html": "/react-memory-game/index.html",
-    "static/css/main.3b488a38.chunk.css.map": "/react-memory-game/static/css/main.3b488a38.chunk.css.map",
-    "static/js/2.0706c444.chunk.js.LICENSE.txt": "/react-memory-game/static/js/2.0706c444.chunk.js.LICENSE.txt"
+    "static/css/main.f39d37af.chunk.css.map": "/react-memory-game/static/css/main.f39d37af.chunk.css.map",
+    "static/js/2.5d94b59c.chunk.js.LICENSE.txt": "/react-memory-game/static/js/2.5d94b59c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.62a91fb4.js",
-    "static/js/2.0706c444.chunk.js",
-    "static/css/main.3b488a38.chunk.css",
-    "static/js/main.0593027f.chunk.js"
+    "static/js/2.5d94b59c.chunk.js",
+    "static/css/main.f39d37af.chunk.css",
+    "static/js/main.27eed861.chunk.js"
   ]
 }
