@@ -56,6 +56,13 @@ function App() {
     }
   }, [choiceOne, choiceTwo, cards]);
 
+  useEffect(() => {
+    if (cards.length && cards.every((card) => card.matched)) {
+      // cards가 전부 앞면이 되었을 때 호출되는 effect 함수
+      console.log('done');
+    }
+  }, [cards]);
+
   const handleChoice = (card: CardProps) => {
     if (isDisable) return;
     choiceOne === null ? setChoiceOne(card) : setChoiceTwo(card);
