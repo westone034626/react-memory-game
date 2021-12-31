@@ -4,6 +4,10 @@
 
 - 데모 링크: https://westone034626.github.io/react-memory-game
 
+- UI/UX
+
+  1.  모달창 발생 시 스크롤 되지 않도록 조치(wanted의 로그인/회원가입 모달창 참고)
+
 - 얻을 수 있었던 것
 
   1.  원하는 로직대로 구현하기 위해 react hook을 활용한 경험(useState, useEffect)
