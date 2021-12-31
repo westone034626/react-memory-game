@@ -3,12 +3,12 @@ import styles from './App.module.css';
 import Card from './components/Card';
 
 const cardImages = [
-  { src: '/react-memory-game/img/helmet-1.png', matched: false },
-  { src: '/react-memory-game/img/potion-1.png', matched: false },
-  { src: '/react-memory-game/img/ring-1.png', matched: false },
-  { src: '/react-memory-game/img/scroll-1.png', matched: false },
-  { src: '/react-memory-game/img/shield-1.png', matched: false },
-  { src: '/react-memory-game/img/sword-1.png', matched: false },
+  { src: `${process.env.PUBLIC_URL}/img/helmet-1.png`, matched: false },
+  { src: `${process.env.PUBLIC_URL}/img/potion-1.png`, matched: false },
+  { src: `${process.env.PUBLIC_URL}/img/ring-1.png`, matched: false },
+  { src: `${process.env.PUBLIC_URL}/img/scroll-1.png`, matched: false },
+  { src: `${process.env.PUBLIC_URL}/img/shield-1.png`, matched: false },
+  { src: `${process.env.PUBLIC_URL}/img/sword-1.png`, matched: false },
 ];
 
 export interface CardProps {
@@ -54,7 +54,7 @@ function App() {
         resetTurn();
       }
     }
-  }, [choiceOne, choiceTwo]);
+  }, [choiceOne, choiceTwo, cards]);
 
   const handleChoice = (card: CardProps) => {
     if (isDisable) return;

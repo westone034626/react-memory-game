@@ -26,7 +26,9 @@ const Card: React.FC<CardComponentProps> = ({
       ) : (
         <div
           className={`${styles.cardImage}`}
-          style={{ backgroundImage: 'url(/react-memory-game/img/cover.png)' }}
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/img/cover.png)`,
+          }}
           onClick={handleClick}
         ></div>
       )}
