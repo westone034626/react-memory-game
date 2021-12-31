@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './App.module.css';
 import Card from './components/Card';
 import Modal from './components/Modal';
+import CompleteAlert from './components/CompleteAlert';
 
 const cardImages = [
   { src: `${process.env.PUBLIC_URL}/img/helmet-1.png`, matched: false },
@@ -109,7 +110,9 @@ function App() {
         </div>
       )}
       <p>Turns: {turns}</p>
-      <Modal isOpen={isDone} turns={turns} handleButton={handleModalButton} />
+      <Modal isOpen={isDone}>
+        <CompleteAlert turns={turns} handleButton={handleModalButton} />
+      </Modal>
     </div>
   );
 }
