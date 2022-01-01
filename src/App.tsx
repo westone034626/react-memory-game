@@ -110,7 +110,7 @@ function App() {
         </div>
       )}
       <p>Turns: {turns}</p>
-      <Modal isOpen={isDone}>
+      <Modal isOpen={isDone} onClose={() => setIsDone(false)}>
         <CompleteAlert turns={turns} handleButton={handleModalButton} />
       </Modal>
     </div>
