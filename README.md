@@ -4,15 +4,30 @@
 
 - 데모 링크: https://westone034626.github.io/react-memory-game
 
+# 부족한 부분들
+
+- Typescript
+
+  1. event object에 DOM의 method인 contains가 없는데 prototype에 존재한다는 사실을 알고
+     타입에러 발생하는 것과 상관없이 그대로 사용 중(@ts-ignore 덕분에)
+
+# 느낀점
+
 - UI/UX
 
   1.  모달창 발생 시 스크롤 되지 않도록 조치(wanted의 로그인/회원가입 모달창 참고)
 
   - querySelector로 body 태그에 접근해서 style의 overflow 조작
 
+  2.  모달창을 close button 뿐 아니라 mask 방식으로 닫을 수 있도록 구현(wanted의 로그인/회원가입 모달창 참고)
+
 - Javascript 문법
 
   1.  카드 오브젝트들의 matched property가 모두 true인지 검사할 때 every를 활용
+
+- DOM 문법
+
+  1. contains: DOM 트리에 DOM 트리를 입력하고 포함관계인지 검사하는 함수 (DOM에 대한 지식도 문제 해결 능력에 지대한 영향을 끼치겠구나를 느낌)
 
 - 얻을 수 있었던 것
 
